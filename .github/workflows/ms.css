@@ -1,0 +1,760 @@
+/* 
+CREATED ON : 27/05/2020, 17:35:17
+AUTHOR     : MANOEL SILVA
+*/
+
+*{
+    margin: 0px 0;
+    padding: 0px;
+}
+*
+
+body{
+    background: url("../images/ms-fund-transparente-2.png") no-repeat 250px 100px;
+    font-family: Arial,  helvetica, sans-serif, Verdana;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.1;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: inherit;
+}
+h1 {
+    font-size: 4.2rem;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+}
+h2 {
+    font-size: 3.56rem;
+    line-height: 110%;
+    margin: 1.78rem 0 1.424rem 0;
+}
+h3 {
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
+}
+h4 {
+    font-size: 2.28rem;
+    line-height: 110%;
+    margin: 1.14rem 0 0.912rem 0;
+}
+h5 {
+    font-size: 1.64rem;
+    line-height: 110%;
+}
+h6 {
+    font-size: 1rem;
+    line-height: 110%;
+}
+
+/* CSS PARA ESTILIZAR O MENU DROPDOWN 
+* DESNECESSARIO NO MOMENTO
+header{
+position: relative;
+z-index: 10000;
+}
+*/
+
+.menu{
+    position: absolute;
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    float: left;
+    left:0px;
+    right:0px;
+    width: 100%;
+    padding: 20px;
+    background-color: lightgoldenrodyellow;
+}
+
+.menu li{
+    position: relative;
+    float: left;
+    left: 10px;
+    border-right: 1px solid #c0c0c0;
+}
+.menu li a{
+    color:#333;
+    text-decoration:none;
+    padding:5px 10px;
+    display: block;
+}
+.menu li a:hover{
+    background:#333;
+    color:#fff;
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+}
+.menu li ul{
+    position: absolute;
+    top:25px;
+    left: 0px;
+    background-color: lightgoldenrodyellow;
+    display: none;
+}
+.menu li:hover ul, .menu li.over ul{
+    display: block;
+}
+.menu li ul li{
+    border: 1px solid #c0c0c0;
+    display: block;
+    width: 160px;
+    left: 0px;
+}
+/* CSS PARA DEFINIR ALTURA DO CONTEÚDO DEPOIS DO MENU DROPDOWN */
+.container{
+    margin-top: 0px auto;
+}
+/* CSS PARA ESTILIZAR OS TILULOS DAS TELAS COM A TAG H2 */
+.controls {
+    position: fixedd;
+    text-align: center;
+    width: 100%;
+    background-color: #84ffff;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+/* CSS PARA ALINHAMENTO DA LABEL E CAMPOS DE INPUT´S */
+.form-cad, .consul-cliente, .edit-client, .edit-usuario, .add-produto, .edit-produto {
+    display: inline-block;
+    width: 120px;
+    margin-left: 30px;
+    padding: 3px;
+}
+/* CSS   PARA ALINHAMENTO DA LABEL E INPUT FIELD COM DISPLAY FLEX */
+.navbar-fixed{
+    position: fixed;
+    position: relative;
+    height: 56px;
+    z-index: 997;
+    margin-top: 75px;
+}
+.navbar-fixed nav {
+    position: fixed;
+    width: 100%;
+}
+.cabecalho{
+    background: #130400;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index:998;
+}
+.brand-logo {
+    background-color: #ff6f00;
+    width: auto;
+    margin: auto;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 32pt;
+    font-weight: 400;
+}
+.box-login {
+    background-color: #ff6f00;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px 5px;
+    border: 1px solid ActiveCaption;
+    height: 230px;
+    width: 350px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.login-input{
+    outline: 0;
+    margin-top: 15px;
+    padding: 15px 16px;
+    padding-top: 15px;
+    border: 1px solid ActiveCaption;
+    width: 315px;
+    font-size: 16pt;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.pass-input {
+    outline: 0;
+    margin-top: 15px;
+    padding: 15px 15px;
+    padding-top:15px;
+    /*background-image: url(../icon/visible.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background: url(../icon/visible.png) right /30px no-repeat;*/
+    border: 1px solid ActiveCaption;
+    width: 315px;
+    font-size: 16pt;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#icon{
+    position: absolute;
+    top: 43.5%;
+    right: 500px;
+    transform: translateY(-50%);
+    background: url(../icon/visible.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#icon.hide{
+    background: url(../icon/hide.png);
+    background-size: cover;
+}
+
+.show-pass{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+.btn-enter .enter {
+    display: inline-block;
+    position: absolute;
+    margin-top: 15px;
+    width: 350px;
+    padding: 15px;
+    border: 1px solid activecaption;
+    background-color: lightblue;
+    font-size: 15pt;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.clock h5 {
+    float: right;
+    margin-right: 40px;
+    font-weight: 700;
+    color: #ff6f00;
+    padding: 0px
+}
+.logout {
+    margin-top: -25px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 18pt;
+    color: #ff6f00;
+}
+.logo h5 {
+    float: right;
+    margin-right: 40px;
+    font-weight: 700;
+    color: #ff6f00;
+    margin-top: 7px;
+    background: black;
+    width:auto;
+}
+/* Classes para alinhamento dos titulos e dos input's da com tela flex'*/
+.end-empresa, .cad-produto, .edit-produto, .cad-empresa, .edit-client, .cad-usuario, .consul-usuario, .form-cad-client, .edit-usuario, .consul-cliente{
+    display: flex;
+    font-size: 8pt;
+    font-weight: 700;
+    margin-left: 20px;
+    position: relative;
+}
+.input-fields {
+    position: relative;
+    text-transform: uppercase;
+    border: 1px solid lightblue;
+    padding: 3px 5px;
+    margin: 15px;
+    margin-left: 20px;
+    margin-top: 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+/* CLASS VALIDATE CONFIGURA AS MENSAGENS DE ERROS DO SISTEMA */
+.validate {
+    position: relative;
+    display: inline-block;
+    background-color:#e51c23;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 31.5%;
+    width: 35%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    display: none; /* Oculta a mensagem inicialmente */
+}
+/*  CONFIGURAÇÃO DA MENSAGEN QUANDO O USUÁRIO É CADASTRADO COM SUCESSO */
+.validate-cadastro {
+    background-color: lightblue;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 30%;
+    width: 40%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+/* CONFIGURAÇÃO DA MENSAGEN QUANDO ALTERAR A SENHA */
+.alter-password {
+    background-color: lightblue;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 30%;
+    width: 40%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.col .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+
+.tabs {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 48px;
+    width: 100%;
+    background-color: #004d40;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.tabs.tabs-transparent {
+    background-color: transparent;
+}
+
+.tabs.tabs-transparent .tab a,
+.tabs.tabs-transparent .tab.disabled a,
+.tabs.tabs-transparent .tab.disabled a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tabs.tabs-transparent .tab a:hover,
+.tabs.tabs-transparent .tab a.active {
+    color: #fff;
+}
+
+.tabs.tabs-transparent .indicator {
+    background-color: #fff;
+}
+
+.tabs.tabs-fixed-width {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.tabs.tabs-fixed-width .tab {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.tabs .tab {
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.tabs .tab a {
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    font-size: 14px;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: color .28s ease, background-color .28s ease;
+    transition: color .28s ease, background-color .28s ease;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: rgba(246, 178, 181, 0.2);
+    outline: none;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.tabs .tab.disabled a,
+.tabs .tab.disabled a:hover {
+    color: rgba(238, 110, 115, 0.4);
+    cursor: default;
+}
+
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: #ffffff;
+    will-change: left, right;
+}
+
+@media only screen and (max-width: 992px) {
+    .tabs {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .tabs .tab {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+    .tabs .tab a {
+        padding: 0 12px;
+    }
+}
+/* CSS PARA ESTILIZAR OS CAMPOS INPUT´S DA CLASS INPUT-FIELD */
+.input-field {
+    text-transform: uppercase;
+    border: 1px solid lightblue;
+    padding: 3px;
+    margin: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+/*  ESTES INPUTS ESTÃO ESTILIZADOS PARA ESCREVER EM MINÚSCULO */
+#email, #complemento, #email_usuario, #login_usuario {
+    text-transform: lowercase;
+}
+/*  BUTTON DA CLASS BTN-GREEN-TEAL-DARKEN-1 */
+.btn-green-teal-darken-1  {
+    position: relative;
+    left: 40px;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: green solid 1px;
+    border-radius: 3px;
+    box-shadow: 0 3px #999;
+    font-size: 10pt;
+    color: green;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-green-teal-darken-1:hover{
+    background-color: green;
+    color: #ffffff;
+    opacity: 1
+}
+/*  BUTTON DA CLASS BTN-GREEN-DARKEN-1 */
+.btn-green-darken-1{
+    position: relative;
+    left: 40px;
+    text-decoration: none;
+    background-color: #1b5e20;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px #999;
+    font-size: 10pt;
+    color: #fff;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-green-darken-1:hover{
+    opacity: 1
+}
+/* BUTTON DA CLASS BTN  E RED */
+.red {
+    background-color: #F44336 !important;
+}
+.btn {
+    position: relative;
+    left: 40px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px #999;
+    font-size: 10pt;
+    color: #fff;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 1
+}
+/* BUTTON DA CLASS BTN-RED-MODAL-FLOAT MENSAGEM FLUTUANTE DO SISTEMA */
+.btn-red-modal-float{
+    position: relative;
+    right: 5px;
+    text-decoration: none;
+    background-color: #e51c23;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px #999;
+    font-size: 10pt;
+    color: #fff;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-red-modal-float:hover{
+    opacity: 1
+}
+/* BUTTON DA CLASS BTN-BLUE-MODAL-FLOAT CONFIGURA AS MENSAGENS FLUTUANTE DO SISTEMA */
+.btn-blue-modal-float{
+    position: relative;
+    right: 5px;
+    text-decoration: none;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px #999;
+    font-size: 10pt;
+    color: #000;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-blue-modal-float:hover{
+    opacity: 1
+}
+/* #F44336
+* CLASS VALIDATE CONFIGURA AS MENSAGENS DE ERROS DO SISTEMA QUANDO O CLIENTE JÁ ESTÁ CADASTRADO */
+.validate {
+    display: flex;
+    position: relative;
+    display: inline-block;
+    background-color:#e51c23;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 31%;
+    width: 35%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+/*  CONFIGURAÇÃO DA MENSAGEN QUANDO O USUÁRIO É CADASTRADO COM SUCESSO */
+.validate-cadastro {
+    background-color: lightblue;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 30%;
+    width: 40%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+/* CONFIGURAÇÃO DA MENSAGEN QUANDO ALTERAR A SENHA */
+.alter-password {
+    background-color: lightblue;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 3px;
+    text-align: center;
+    left: 30%;
+    width: 40%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+/*  CONFIGURAÇÃO DAS MENSAGENS FRUTUANTES DO SISTEMA */
+.toast {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+#toast-container {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+}
+@media only screen and (max-width: 600px) {
+    #toast-container {
+        min-width: 100%;
+        bottom: 0%;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    #toast-container {
+        left: 5%;
+        bottom: 7%;
+        max-width: 90%;
+    }
+}
+@media only screen and (min-width: 993px) {
+    #toast-container {
+        top: 10%;
+        right: 7%;
+        max-width: 86%;
+    }
+}
+.toast {
+    border-radius: 2px;
+    top: 35px;
+    width: auto;
+    margin-top: 10px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    min-height: 48px;
+    line-height: 1.5em;
+    background-color: #323232;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: default;
+}
+.toast .toast-action {
+    color: #eeff41;
+    font-weight: 500;
+    margin-right: -25px;
+    margin-left: 3rem;
+}
+.toast.rounded {
+    border-radius: 24px;
+}
+@media only screen and (max-width: 600px) {
+    .toast {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+/* CONFIGURAÇÃO CSS SOMENTE PARA AS MENSAGENS MODAL */
+.ms-container{
+    padding:0.01em 16px;
+    text-align:right
+}
+.ms-footer{
+    position: relative;
+    text-decoration: none;
+    margin: 30px -10px;
+    margin-right: 10px;
+    text-align: right;
+}
+.ms-modal{
+    z-index:999;
+    display:none;
+    padding-top:100px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4)
+}
+.ms-modal-content{
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:0;
+    outline:0;
+    width:700px;
+    height:180px;
+    padding:10px;
+}
+.ms-animate-zoom {
+    animation:animatezoom 0.6s
+}
+@keyframes animatezoom{
+    from{
+        transform:scale(0)
+    }
+    to{
+        transform:scale(1)
+    }
+}
+.ms-card{
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
+/* CONFIGURAÇÃO CSS PARA FECHAR O MODAL NO X */
+.ms-center{
+    display:inline-block;
+    width:auto
+}
+.ms-button{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap
+}
+.ms-xlarge{
+    font-size:24px!important
+}
+.ms-hover-red:hover{
+    color:#fff!important;
+    background-color:#f44336!important
+}
+.ms-display-topright{
+    position:absolute;
+    right:0;
+    top:0
+}
+
+
+
